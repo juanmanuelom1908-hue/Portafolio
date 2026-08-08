@@ -1,0 +1,46 @@
+name: Deploy Portfolio to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Build combined site
+        run: |
+          mkdir -p site/superhero
+          mkdir -p site/weather
+          cp -r ./powers.form/* site/superhero/
+          cp -r ./weather-project/* site/weather/
+          # Si tienes un index.html de portada en la raíz del repo, descomenta:
+          # cp ./index.html site/
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Upload combined site
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
