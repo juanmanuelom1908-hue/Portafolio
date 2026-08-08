@@ -1,37 +1,57 @@
 # 🦸 Superhero Application Form
 
-A responsive superhero application form built with React and Tailwind CSS.
+Interactive superhero application form built with React and Tailwind CSS.
 
-## 🚀 Features
+Users can create their own superhero profile by entering their identity, choosing their power origin, selecting their abilities and assigning a power level.
 
-- Hero name input
-- Real name input
-- Power source selection
-- Multiple superpower selection
-- Form validation
-- Responsive design
-- Interactive hover and focus states
-- Modern gradient background
+## ✨ Features
+
+- 🦸 Hero name and real name inputs
+- ⚡ Power origin selection
+- 💥 Multiple power selection
+- 🔥 Dynamic power level slider
+- 📊 Animated power level bar
+- 🟢🟡🔴 Power level changes color depending on the value
+- 🏆 Dynamic hero ranking:
+  - Rookie
+  - Hero
+  - Elite
+  - Legendary
+- 🎨 Responsive interface built with Tailwind CSS
+- ✨ Interactive input and checkbox states
+- 🪄 Animated superhero profile
+- 📜 Automatic scroll to the generated profile
 
 ## 🛠️ Technologies
 
 - React
 - JavaScript
 - Tailwind CSS
-- HTML
-- CSS
+- HTML5
 
-## 📌 Project Status
+## 📚 What I practiced
 
-🚧 Currently in development.
+This project helped me practice:
 
-More features and improvements will be added soon.
+- React state with `useState`
+- `useEffect`
+- `useRef`
+- Controlled inputs
+- Checkboxes and select elements
+- Conditional rendering
+- Dynamic Tailwind classes
+- CSS transitions and animations
+- Responsive design
+- Component structure
 
-## 🎯 Future Improvements
+## 🚀 Project
 
-- Generate a superhero profile card after submitting
-- Add power levels
-- Add superhero avatars
-- Save created heroes
-- Improve form validation
-- Add animations
+The application allows users to create a superhero profile and visualize their powers and power level in an interactive card.
+
+## 📌 Future improvements
+
+- Add superhero images or avatars
+- Add more power categories
+- Add local storage
+- Add form validation messages
+- Add the ability to edit the generated hero
