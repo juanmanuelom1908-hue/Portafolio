@@ -24,12 +24,27 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
 
+      - name: Setup Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+
+      - name: Install dependencies
+        run: npm install
+
+      - name: Build Motorcycle Shop (TypeScript)
+        run: npx tsc --project tsconfig.json
+
       - name: Build combined site
         run: |
           mkdir -p site/superhero
           mkdir -p site/weather
+          mkdir -p site/motorcycle-shop
           cp -r ./powers.form/* site/superhero/
           cp -r ./weather-project/* site/weather/
+          cp "./Motorcycle Shop/index.html" site/motorcycle-shop/
+          cp "./Motorcycle Shop/index.js" site/motorcycle-shop/
+          cp "./Motorcycle Shop/styles.css" site/motorcycle-shop/
           # Si tienes un index.html de portada en la raíz del repo, descomenta:
           # cp ./index.html site/
 
