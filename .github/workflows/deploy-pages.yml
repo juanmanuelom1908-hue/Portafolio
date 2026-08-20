@@ -19,7 +19,9 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -29,24 +31,35 @@ jobs:
         with:
           node-version: '20'
 
-      - name: Install dependencies
+      - name: Install root dependencies
         run: npm install
+
+      - name: Install Football Card Builder dependencies
+        run: npm install
+        working-directory: ./football-card-builder
 
       - name: Build Motorcycle Shop (TypeScript)
         run: npx tsc --project tsconfig.json
+
+      - name: Build Football Card Builder
+        run: npm run build
+        working-directory: ./football-card-builder
 
       - name: Build combined site
         run: |
           mkdir -p site/superhero
           mkdir -p site/weather
           mkdir -p site/motorcycle-shop
+          mkdir -p site/football-card-builder
+
           cp -r ./powers.form/* site/superhero/
           cp -r ./weather-project/* site/weather/
+
           cp "./Motorcycle Shop/index.html" site/motorcycle-shop/
           cp "./Motorcycle Shop/index.js" site/motorcycle-shop/
           cp "./Motorcycle Shop/styles.css" site/motorcycle-shop/
-          # Si tienes un index.html de portada en la raíz del repo, descomenta:
-          # cp ./index.html site/
+
+          cp -r ./football-card-builder/dist/* site/football-card-builder/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
