@@ -29,7 +29,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v4
         with:
-          node-version: '20'
+          node-version: "20"
 
       - name: Install root dependencies
         run: npm install
@@ -39,11 +39,11 @@ jobs:
         working-directory: ./football-card-builder
 
       - name: Build Motorcycle Shop (TypeScript)
-        run: npx tsc --project "Motorcycle Shop/tsconfig.json"
+        run: npx tsc --project "./Motorcycle Shop/tsconfig.json"
 
       - name: Build Football Card Builder
-  run: npm run build
-  working-directory: ./football-card-builder
+        run: npm run build
+        working-directory: ./football-card-builder
 
       - name: Build combined site
         run: |
@@ -67,7 +67,7 @@ jobs:
       - name: Upload combined site
         uses: actions/upload-pages-artifact@v3
         with:
-          path: './site'
+          path: "./site"
 
       - name: Deploy to GitHub Pages
         id: deployment
