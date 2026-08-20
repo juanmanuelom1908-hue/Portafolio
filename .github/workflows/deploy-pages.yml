@@ -38,8 +38,7 @@ jobs:
         run: npm install
         working-directory: ./football-card-builder
 
-      - name: Build Motorcycle Shop (TypeScript)
-        run: npx tsc --project "./Motorcycle Shop/tsconfig.json"
+      
 
       - name: Build Football Card Builder
         run: npm run build
