@@ -19,6 +19,12 @@ Aplicación de consulta del clima.
 - **Demo en vivo:** [Ver proyecto](https://juanmanuelom1908-hue.github.io/Portafolio/weather/)
 - **Código:** [`/weather-project`](./weather-project)
 
+### ⚽ Football Card Builder
+Aplicación interactiva para crear y personalizar tarjetas de jugadores de fútbol.
+- **Demo en vivo:** [Ver proyecto](https://juanmanuelom1908-hue.github.io/Portafolio/football-card-builder/)
+- **Código:** [`/football-card-builder`](./football-card-builder)
+- **Tecnologías:** React, TypeScript, useState, useEffect y localStorage
+
 ## 🛠️ Tecnologías
 
 - TypeScript
@@ -34,14 +40,3 @@ Aplicación de consulta del clima.
 git clone https://github.com/juanmanuelom1908-hue/Portafolio.git
 cd Portafolio
 npm install
-```
-
-Para compilar el proyecto de TypeScript (Motorcycle Shop):
-
-```bash
-npx tsc
-```
-
-## 📄 Licencia
-
-Este proyecto es de uso personal / educativo.
