@@ -2,7 +2,7 @@ let currentWeatherData = null;
 let currentUnit = 'C';
 
 async function getWeather(city) {
-  const response = await fetch(`https://weather-proxy.freecodecamp.rocks/api/city/${city}`);
+  const response = await fetch(`http://localhost:5000/api/weather?city=${city}`);
   if (!response.ok) throw new Error("City not found");
   return await response.json();
 }

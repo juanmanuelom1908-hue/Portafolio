@@ -20,12 +20,8 @@ interface Motorcycle {
 }
 
 async function fetchMotorcycles(): Promise<Motorcycle[]> {
-  const response = await fetch(
-    "https://cdn.freecodecamp.org/curriculum/labs/data/motorcycles.json"
-  );
-
+  const response = await fetch("http://localhost:3000/api/motorcycles");
   const data = await response.json();
-
   return data;
 }
 
