@@ -29,8 +29,9 @@ const SuperheroForm = () => {
   powers: string[];
   powerLevel: number;
 }
+const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:3000'
 async function saveHero(newHero: Hero) {
-  const res = await fetch("http://localhost:3001/api/heroes", {
+  const res = await fetch(`${API_URL}/api/heroes`, {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify(newHero),
@@ -74,7 +75,7 @@ const [hero, setHero] = useState<Hero | null>(null);
 
     const [savedHeroes, setSavedHeroes] = useState<Hero[]>([]);
     useEffect(() => {
-  fetch("http://localhost:3001/api/heroes")
+  fetch(`${API_URL}/api/heroes`)
     .then((res) => res.json())
     .then((data: Hero[]) => setSavedHeroes(data));
 }, []);
