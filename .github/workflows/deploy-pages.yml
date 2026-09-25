@@ -42,6 +42,14 @@ jobs:
         run: npm run build
         working-directory: ./football-card-builder/client
 
+      - name: Install Superhero dependencies 
+        run: npm install 
+        working-directory: ./powers-form/client-vite-temp
+
+      - name: Build Superhero 
+        run: npm run build
+        working-directory: ./powers-form/client-vite-temp
+
       - name: Build combined site
         run: |
           mkdir -p site/superhero
@@ -49,7 +57,7 @@ jobs:
           mkdir -p site/motorcycle-shop
           mkdir -p site/football-card-builder
 
-          cp -r ./powers.form/* site/superhero/
+          cp -r ./powers-form/client-vite-temp/dist/* site/superhero/
           cp -r ./weather-project/client/* site/weather/
 
           cp "./Motorcycle Shop/index.html" site/motorcycle-shop/
