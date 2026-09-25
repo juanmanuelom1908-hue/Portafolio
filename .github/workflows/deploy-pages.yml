@@ -37,10 +37,13 @@ jobs:
       - name: Install Football Card Builder dependencies
         run: npm install
         working-directory: ./football-card-builder/client
+        
 
       - name: Build Football Card Builder
         run: npm run build
         working-directory: ./football-card-builder/client
+        env: 
+        VITE_API_URL: ${{ secrets.VITE_FOOTBALL_API_URL }}
 
       - name: Install Superhero dependencies 
         run: npm install 
