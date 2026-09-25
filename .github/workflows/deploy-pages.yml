@@ -64,7 +64,7 @@ jobs:
           cp "./Motorcycle Shop/client/index.js" site/motorcycle-shop/
           cp "./Motorcycle Shop/client/styles.css" site/motorcycle-shop/
 
-          cp -r ./football-card-builder/dist/* site/football-card-builder/
+          cp -r ./football-card-builder/client/dist/* site/football-card-builder/
 
       - name: Setup Pages
         uses: actions/configure-pages@v5
