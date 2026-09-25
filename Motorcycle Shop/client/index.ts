@@ -19,8 +19,10 @@ interface Motorcycle {
   year: number;
 }
 
+const API_URL = 'https://portafolio-motorcycle.onrender.com';
+
 async function fetchMotorcycles(): Promise<Motorcycle[]> {
-  const response = await fetch("http://localhost:3000/api/motorcycles");
+  const response = await fetch(`${API_URL}/api/motorcycles`)
   const data = await response.json();
   return data;
 }
