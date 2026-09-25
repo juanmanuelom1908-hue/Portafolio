@@ -1,8 +1,9 @@
 let currentWeatherData = null;
 let currentUnit = 'C';
+ const API_URL = 'https://portafolio-juan-ortega.onrender.com'; 
 
 async function getWeather(city) {
-  const response = await fetch(`http://localhost:5000/api/weather?city=${city}`);
+  const response = await fetch(`${API_URL}/api/weather?city=${city}`)
   if (!response.ok) throw new Error("City not found");
   return await response.json();
 }
