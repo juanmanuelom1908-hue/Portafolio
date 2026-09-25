@@ -60,9 +60,9 @@ jobs:
           cp -r ./powers-form/client-vite-temp/dist/* site/superhero/
           cp -r ./weather-project/client/* site/weather/
 
-          cp "./Motorcycle Shop/index.html" site/motorcycle-shop/
-          cp "./Motorcycle Shop/index.js" site/motorcycle-shop/
-          cp "./Motorcycle Shop/styles.css" site/motorcycle-shop/
+          cp "./Motorcycle Shop/client/index.html" site/motorcycle-shop/
+          cp "./Motorcycle Shop/client/index.js" site/motorcycle-shop/
+          cp "./Motorcycle Shop/client/styles.css" site/motorcycle-shop/
 
           cp -r ./football-card-builder/dist/* site/football-card-builder/
 
